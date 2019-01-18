@@ -25,4 +25,4 @@ About
 
 - `zathurarc`: [solarized
   colorscheme](https://github.com/lennonwoo/zathura-solarized) for the
-  PDF-viewer `zathura`.
+  PDF-viewer `zathura` + Source Code Pro
