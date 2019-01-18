@@ -22,3 +22,7 @@ About
   of tmux](https://leanpub.com/the-tao-of-tmux)
 
 - `vimrc`: some personal preferences, mostly results of googling around.
+
+- `zathurarc`: [solarized
+  colorscheme](https://github.com/lennonwoo/zathura-solarized) for the
+  PDF-viewer `zathura`.
