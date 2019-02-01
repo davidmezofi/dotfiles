@@ -159,3 +159,6 @@ PATH=$PATH:~/myscripts
 
 # Use vim as my default editor
 export EDITOR=vim
+
+# Set zathura to `fork` by default
+alias zathura='zathura --fork'
