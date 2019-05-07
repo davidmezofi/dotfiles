@@ -1,0 +1,10 @@
+# Use with solarized terminal colors
+color listnormal          default default
+color listfocus           color8 color12
+color listnormal_unread   default default bold
+color listfocus_unread    color8 color12 bold
+color background          default default
+color info                default black 
+color article             default default
+highlight article "^(Forrás|Cím|Szerzõ|Link|Dátum):" default default bold
+highlight article "https?://[^ ]+" red default
