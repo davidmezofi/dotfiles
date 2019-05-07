@@ -87,3 +87,5 @@ while c <= 'z'
 endw
 set timeout ttimeoutlen=1
 set hlsearch
+
+autocmd FileType gap setlocal shiftwidth=2 tabstop=2
