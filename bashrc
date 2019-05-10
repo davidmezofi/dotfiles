@@ -28,7 +28,7 @@ shopt -s checkwinsize
 #shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+#[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
@@ -79,22 +79,18 @@ if [ -x /usr/bin/dircolors ]; then
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
+    #alias grep='grep --color=auto'
+    #alias fgrep='fgrep --color=auto'
+    #alias egrep='egrep --color=auto'
 fi
 
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+#alias ll='ls -l'
+#alias la='ls -A'
+#alias l='ls -CF'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -115,7 +111,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
 ###############################################################################
 
 # Using powerline in the shell
@@ -127,10 +122,10 @@ if [ -f `which powerline-daemon` ]; then
 fi
 
 # Using the solarized skin for mc
-export MC_SKIN=$HOME/.config/mc/solarized.ini
+# export MC_SKIN=$HOME/.config/mc/solarized.ini
 # After hitting F10 in mc we would like to land in the directory opened in the
 # current panel
-source /usr/lib/mc/mc.sh
+# source /usr/lib/mc/mc.sh
 
 PATH=$PATH:~/myscripts
 
@@ -138,10 +133,10 @@ PATH=$PATH:~/myscripts
 export EDITOR=vim
 
 # Set zathura to `fork` by default
-alias zathura='zathura --fork'
+# alias zathura='zathura --fork'
 
 # Inititalize `conda`
-. /home/$USER/anaconda3/etc/profile.d/conda.sh
+# . /home/$USER/anaconda3/etc/profile.d/conda.sh
 
 export TERM="screen-256color"
 alias tmux="tmux -2"
@@ -156,12 +151,11 @@ alias tmux="tmux -2"
 # original directory.
 
 function ranger-cd {
-    tempfile="$(mktemp -t tmp.XXXXXX)"
-    ranger --choosedir="$tempfile" "${@:-$(pwd)}"
+    tempfile="$(mktemp)"
+    /usr/bin/ranger --choosedir="$tempfile" "${@:-$(pwd)}"
     test -f "$tempfile" &&
-    if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ];
-        then
-            cd -- "$(cat "$tempfile")"
+    if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
+        cd -- "$(cat "$tempfile")"
     fi
     rm -f -- "$tempfile"
 }
