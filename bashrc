@@ -136,7 +136,7 @@ export EDITOR=vim
 # alias zathura='zathura --fork'
 
 # Inititalize `conda`
-# . /home/$USER/anaconda3/etc/profile.d/conda.sh
+. /home/$USER/anaconda3/etc/profile.d/conda.sh
 
 export TERM="screen-256color"
 alias tmux="tmux -2"
